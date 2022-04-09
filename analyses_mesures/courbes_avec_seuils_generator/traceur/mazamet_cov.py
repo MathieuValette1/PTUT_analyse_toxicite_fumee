@@ -7,7 +7,7 @@ mazametRemiseCOV = "../mesures/mazamet_mesures/mazametRemiseCOV.csv"
 seuils = [250, 500, 1000, 3000]
 nom_seuils = ["Niveau 1", "Niveau 2", "Niveau 3", "Niveau 4", "Niveau 5"]
 
-def traceur_COV():
+def traceur_COV_mazamet():
     # On trace les courbes
 
     ### COV
@@ -20,26 +20,26 @@ def traceur_COV():
     traceur_mazametSaleCOV.set_liste_seuil(seuils)
     traceur_mazametSaleCOV.set_liste_nom_seuil(nom_seuils)
     traceur_mazametSaleCOV.set_dir_path("mazamet/COVt/")
-    traceur_mazametSaleCOV.set_fig_name("COV_sale_mazamet")
+    traceur_mazametSaleCOV.set_fig_name("courbeMazametSaleCOV")
     traceur_mazametSaleCOV.draw_graph()
 
-    # Mazamet propre PM 10
+    # Mazamet propre COV
     traceur_mazametPropreCOV = TraceurCourbeAvecSeuil([mazametPropreCOV], "COV")
     traceur_mazametPropreCOV.setTitreGraph(
         "Evolution de la concentration des COV dans le vestiaire propre du 27-02 au 13-03")
-    traceur_mazametPropreCOV.set_lieu("le vestiaire sale")
+    traceur_mazametPropreCOV.set_lieu("le vestiaire propre")
     traceur_mazametPropreCOV.set_liste_seuil(seuils)
     traceur_mazametPropreCOV.set_liste_nom_seuil(nom_seuils)
     traceur_mazametPropreCOV.set_dir_path("mazamet/COVt/")
-    traceur_mazametPropreCOV.set_fig_name("COV_propre_mazamet")
+    traceur_mazametPropreCOV.set_fig_name("courbeMazametPropreCOV")
     traceur_mazametPropreCOV.draw_graph()
 
-    # Mazamet propre PM 10
+    # Mazamet propre COV
     traceur_mazametRemiseCOV = TraceurCourbeAvecSeuil([mazametRemiseCOV], "COV")
     traceur_mazametRemiseCOV.setTitreGraph("Evolution de la concentration des COV dans la remise du 27-02 au 13-03")
-    traceur_mazametRemiseCOV.set_lieu("le vestiaire sale")
+    traceur_mazametRemiseCOV.set_lieu("la remise")
     traceur_mazametRemiseCOV.set_liste_seuil(seuils)
     traceur_mazametRemiseCOV.set_liste_nom_seuil(nom_seuils)
     traceur_mazametRemiseCOV.set_dir_path("mazamet/COVt/")
-    traceur_mazametRemiseCOV.set_fig_name("COV_remise_mazamet")
+    traceur_mazametRemiseCOV.set_fig_name("courbeMazametRemiseCOV")
     traceur_mazametRemiseCOV.draw_graph()

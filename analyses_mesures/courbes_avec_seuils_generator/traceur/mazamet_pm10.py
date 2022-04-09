@@ -4,11 +4,11 @@ mazametSalePM10 = "../mesures/mazamet_mesures/mazametSalePM10.csv"
 mazametProprePM10 = "../mesures/mazamet_mesures/mazametProprePM10.csv"
 mazametRemisePM10 = "../mesures/mazamet_mesures/mazametRemisePM10.csv"
 
-seuils = [45, 15] # 24h, année
+seuils = [45, 15]  # 24h, année
 nom_seuils = ["seuil 24h", "seuil année"]
-def traceur_pm10():
 
 
+def traceur_pm10_mazamet():
     # On trace les courbes
 
     ### PM10

@@ -1,7 +1,7 @@
 import seaborn as sns
 import pandas as pd
 from pylab import *
-from datetime import datetime
+from datetime import datetime, timedelta
 
 STORAGE_PATH = '../graphs/courbes_avec_seuils/'
 
@@ -88,10 +88,19 @@ class TraceurCourbeAvecSeuil:
 
     def csv_reader(self, csv_path):
 
-        df = pd.read_csv(csv_path, sep=";", parse_dates=['Date'], date_parser=self.dateparse, header=0,
+        df = pd.read_csv(csv_path, sep=";",  header=0,
                          names=['Date', self.typeMesure])
         df.iloc[:, 1:] = df.iloc[:, 1:].replace(',', '.', regex=True).astype(float)
+        df["Date"] = pd.to_datetime(df["Date"])
+        time_, value = self.transformToMean(df)
+        df = pd.DataFrame({
+            "Date": time_,
+            "Value": value
+        })
+
         df = df.set_index('Date')
+
+
         return df
 
     def fill_liste_deuxieme_DataFrame(self):
@@ -104,6 +113,44 @@ class TraceurCourbeAvecSeuil:
         for csv_path in self.listeDataFramePath:
             df = self.csv_reader(csv_path)
             self.listeDataFrame.append(df)
+
+    @staticmethod
+    def transformToMean(dataframe):
+        dates = dataframe.iloc[:, 0]
+        values = dataframe.iloc[:, 1]
+
+        time_ = []
+        value = []
+
+        beginning = dates.loc[0]
+        end = beginning + timedelta(hours=1)
+
+        total = 0
+        number_ = 0
+
+        for i in range(dates.size):
+            current = dates.loc[i]
+
+            if beginning <= current <= end:
+                number_ += 1
+                total += values.loc[i]
+
+
+            else:
+                if number_ == 0:
+                    time_.append(beginning)
+                    value.append(values.loc[i])
+
+                else:
+                    time_.append(beginning)
+                    value.append(total / number_)
+
+                total = 0
+                number_ = 0
+                beginning = beginning + timedelta(hours=1)
+                end = beginning + timedelta(hours=1)
+
+        return time_, value
 
     def _set_label(self):
         if self.liste_deuxieme_dataframe:
@@ -170,3 +217,5 @@ class TraceurCourbeAvecSeuil:
         # plt.show()
         storage_path = STORAGE_PATH + self.dirpath
         plt.savefig(storage_path + self.figname)
+        plt.close()
+
