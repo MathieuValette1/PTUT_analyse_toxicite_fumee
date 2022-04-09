@@ -16,7 +16,7 @@ def traceur_pm2_5_albi():
     # albi sale PM 2_5
     traceur_albiSalePM2_5 = TraceurCourbeAvecSeuil([albiSalePM2_5], "PM2_5")
     traceur_albiSalePM2_5.setTitreGraph(
-        "Evolution de la concentration des PM2_5 dans le vestiaire sale du 27-02 au 13-03")
+        "Evolution de la concentration des PM2_5 dans le vestiaire sale d'albi'")
     traceur_albiSalePM2_5.set_lieu("le vestiaire sale")
     traceur_albiSalePM2_5.set_liste_seuil(seuils)
     traceur_albiSalePM2_5.set_liste_nom_seuil(["seuil 24h", "seuil année"])
@@ -27,7 +27,7 @@ def traceur_pm2_5_albi():
     # albi propre PM 2_5
     traceur_albiProprePM2_5 = TraceurCourbeAvecSeuil([albiProprePM2_5], "PM2_5")
     traceur_albiProprePM2_5.setTitreGraph(
-        "Evolution de la concentration des PM2_5 dans le vestiaire propre du 27-02 au 13-03")
+        "Evolution de la concentration des PM2_5 dans le vestiaire propre d'albi'")
     traceur_albiProprePM2_5.set_lieu("le vestiaire propre")
     traceur_albiProprePM2_5.set_liste_seuil(seuils)
     traceur_albiProprePM2_5.set_liste_nom_seuil(["seuil 24h", "seuil année"])
@@ -37,7 +37,7 @@ def traceur_pm2_5_albi():
 
     # albi propre PM 2_5
     traceur_albiRemisePM2_5 = TraceurCourbeAvecSeuil([albiRemisePM2_5], "PM2_5")
-    traceur_albiRemisePM2_5.setTitreGraph("Evolution de la concentration des PM2_5 dans la remise du 27-02 au 13-03")
+    traceur_albiRemisePM2_5.setTitreGraph("Evolution de la concentration des PM2_5 dans la remise d'albi'")
     traceur_albiRemisePM2_5.set_lieu("la remise")
     traceur_albiRemisePM2_5.set_liste_seuil(seuils)
     traceur_albiRemisePM2_5.set_liste_nom_seuil(["seuil 24h", "seuil année"])

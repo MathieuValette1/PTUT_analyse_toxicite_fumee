@@ -15,7 +15,7 @@ def traceur_COV_mazamet():
     # Mazamet sale PM 10
     traceur_mazametSaleCOV = TraceurCourbeAvecSeuil([mazametSaleCOV], "COV")
     traceur_mazametSaleCOV.setTitreGraph(
-        "Evolution de la concentration des COV dans le vestiaire sale du 27-02 au 13-03")
+        "Evolution de la concentration des COV dans le vestiaire sale de mazamet")
     traceur_mazametSaleCOV.set_lieu("le vestiaire sale")
     traceur_mazametSaleCOV.set_liste_seuil(seuils)
     traceur_mazametSaleCOV.set_liste_nom_seuil(nom_seuils)
@@ -26,7 +26,7 @@ def traceur_COV_mazamet():
     # Mazamet propre COV
     traceur_mazametPropreCOV = TraceurCourbeAvecSeuil([mazametPropreCOV], "COV")
     traceur_mazametPropreCOV.setTitreGraph(
-        "Evolution de la concentration des COV dans le vestiaire propre du 27-02 au 13-03")
+        "Evolution de la concentration des COV dans le vestiaire propre de mazamet")
     traceur_mazametPropreCOV.set_lieu("le vestiaire propre")
     traceur_mazametPropreCOV.set_liste_seuil(seuils)
     traceur_mazametPropreCOV.set_liste_nom_seuil(nom_seuils)
@@ -36,7 +36,7 @@ def traceur_COV_mazamet():
 
     # Mazamet propre COV
     traceur_mazametRemiseCOV = TraceurCourbeAvecSeuil([mazametRemiseCOV], "COV")
-    traceur_mazametRemiseCOV.setTitreGraph("Evolution de la concentration des COV dans la remise du 27-02 au 13-03")
+    traceur_mazametRemiseCOV.setTitreGraph("Evolution de la concentration des COV dans la remise de mazamet")
     traceur_mazametRemiseCOV.set_lieu("la remise")
     traceur_mazametRemiseCOV.set_liste_seuil(seuils)
     traceur_mazametRemiseCOV.set_liste_nom_seuil(nom_seuils)

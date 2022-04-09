@@ -27,7 +27,7 @@ def traceur_pm2_5_mazamet():
     # Mazamet propre PM 2_5
     traceur_mazametProprePM2_5 = TraceurCourbeAvecSeuil([mazametProprePM2_5], "PM2_5")
     traceur_mazametProprePM2_5.setTitreGraph(
-        "Evolution de la concentration des PM2_5 dans le vestiaire propre du 27-02 au 13-03")
+        "Evolution de la concentration des PM2_5 dans le vestiaire propre de mazamet")
     traceur_mazametProprePM2_5.set_lieu("le vestiaire propre")
     traceur_mazametProprePM2_5.set_liste_seuil(seuils)
     traceur_mazametProprePM2_5.set_liste_nom_seuil(["seuil 24h", "seuil année"])
@@ -37,7 +37,7 @@ def traceur_pm2_5_mazamet():
 
     # Mazamet propre PM 2_5
     traceur_mazametRemisePM2_5 = TraceurCourbeAvecSeuil([mazametRemisePM2_5], "PM2_5")
-    traceur_mazametRemisePM2_5.setTitreGraph("Evolution de la concentration des PM2_5 dans la remise du 27-02 au 13-03")
+    traceur_mazametRemisePM2_5.setTitreGraph("Evolution de la concentration des PM2_5 dans la remise de mazamet")
     traceur_mazametRemisePM2_5.set_lieu("la remise")
     traceur_mazametRemisePM2_5.set_liste_seuil(seuils)
     traceur_mazametRemisePM2_5.set_liste_nom_seuil(["seuil 24h", "seuil année"])

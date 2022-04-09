@@ -16,7 +16,7 @@ def traceur_pm10_mazamet():
     # Mazamet sale PM 10
     traceur_mazametSalePM10 = TraceurCourbeAvecSeuil([mazametSalePM10], "PM10")
     traceur_mazametSalePM10.setTitreGraph(
-        "Evolution de la concentration des PM10 dans le vestiaire sale du 27-02 au 13-03")
+        "Evolution de la concentration des PM10 dans le vestiaire sale de mazamet")
     traceur_mazametSalePM10.set_lieu("le vestiaire sale")
     traceur_mazametSalePM10.set_liste_seuil(seuils)
     traceur_mazametSalePM10.set_liste_nom_seuil(nom_seuils)
@@ -27,7 +27,7 @@ def traceur_pm10_mazamet():
     # Mazamet propre PM 10
     traceur_mazametProprePM10 = TraceurCourbeAvecSeuil([mazametProprePM10], "PM10")
     traceur_mazametProprePM10.setTitreGraph(
-        "Evolution de la concentration des PM10 dans le vestiaire propre du 27-02 au 13-03")
+        "Evolution de la concentration des PM10 dans le vestiaire propre de mazamet")
     traceur_mazametProprePM10.set_lieu("le vestiaire sale")
     traceur_mazametProprePM10.set_liste_seuil(seuils)
     traceur_mazametProprePM10.set_liste_nom_seuil(nom_seuils)
@@ -37,7 +37,7 @@ def traceur_pm10_mazamet():
 
     # Mazamet propre PM 10
     traceur_mazametRemisePM10 = TraceurCourbeAvecSeuil([mazametRemisePM10], "PM10")
-    traceur_mazametRemisePM10.setTitreGraph("Evolution de la concentration des PM10 dans la remise du 27-02 au 13-03")
+    traceur_mazametRemisePM10.setTitreGraph("Evolution de la concentration des PM10 dans la remise de mazamet")
     traceur_mazametRemisePM10.set_lieu("le vestiaire sale")
     traceur_mazametRemisePM10.set_liste_seuil(seuils)
     traceur_mazametRemisePM10.set_liste_nom_seuil(nom_seuils)

@@ -15,7 +15,7 @@ def traceur_COV_albi():
     # albi sale PM 10
     traceur_albiSaleCOV = TraceurCourbeAvecSeuil([albiSaleCOV], "COV")
     traceur_albiSaleCOV.setTitreGraph(
-        "Evolution de la concentration des COV dans le vestiaire sale du 27-02 au 13-03")
+        "Evolution de la concentration des COV dans le vestiaire sale d'albi")
     traceur_albiSaleCOV.set_lieu("le vestiaire sale")
     traceur_albiSaleCOV.set_liste_seuil(seuils)
     traceur_albiSaleCOV.set_liste_nom_seuil(nom_seuils)
@@ -26,7 +26,7 @@ def traceur_COV_albi():
     # albi propre COV
     traceur_albiPropreCOV = TraceurCourbeAvecSeuil([albiPropreCOV], "COV")
     traceur_albiPropreCOV.setTitreGraph(
-        "Evolution de la concentration des COV dans le vestiaire propre du 27-02 au 13-03")
+        "Evolution de la concentration des COV dans le vestiaire propre d'albi")
     traceur_albiPropreCOV.set_lieu("le vestiaire propre")
     traceur_albiPropreCOV.set_liste_seuil(seuils)
     traceur_albiPropreCOV.set_liste_nom_seuil(nom_seuils)
@@ -36,7 +36,7 @@ def traceur_COV_albi():
 
     # albi propre COV
     traceur_albiRemiseCOV = TraceurCourbeAvecSeuil([albiRemiseCOV], "COV")
-    traceur_albiRemiseCOV.setTitreGraph("Evolution de la concentration des COV dans la remise du 27-02 au 13-03")
+    traceur_albiRemiseCOV.setTitreGraph("Evolution de la concentration des COV dans la remise d'albi")
     traceur_albiRemiseCOV.set_lieu("la remise")
     traceur_albiRemiseCOV.set_liste_seuil(seuils)
     traceur_albiRemiseCOV.set_liste_nom_seuil(nom_seuils)

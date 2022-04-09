@@ -16,7 +16,7 @@ def traceur_pm10_albi():
     # albi sale PM 10
     traceur_albiSalePM10 = TraceurCourbeAvecSeuil([albiSalePM10], "PM10")
     traceur_albiSalePM10.setTitreGraph(
-        "Evolution de la concentration des PM10 dans le vestiaire sale du 27-02 au 13-03")
+        "Evolution de la concentration des PM10 dans le vestiaire sale d'albi'")
     traceur_albiSalePM10.set_lieu("le vestiaire sale")
     traceur_albiSalePM10.set_liste_seuil(seuils)
     traceur_albiSalePM10.set_liste_nom_seuil(nom_seuils)
@@ -27,7 +27,7 @@ def traceur_pm10_albi():
     # albi propre PM 10
     traceur_albiProprePM10 = TraceurCourbeAvecSeuil([albiProprePM10], "PM10")
     traceur_albiProprePM10.setTitreGraph(
-        "Evolution de la concentration des PM10 dans le vestiaire propre du 27-02 au 13-03")
+        "Evolution de la concentration des PM10 dans le vestiaire propre d'albi'")
     traceur_albiProprePM10.set_lieu("le vestiaire propre")
     traceur_albiProprePM10.set_liste_seuil(seuils)
     traceur_albiProprePM10.set_liste_nom_seuil(nom_seuils)
@@ -37,7 +37,7 @@ def traceur_pm10_albi():
 
     # albi propre PM 10
     traceur_albiRemisePM10 = TraceurCourbeAvecSeuil([albiRemisePM10], "PM10")
-    traceur_albiRemisePM10.setTitreGraph("Evolution de la concentration des PM10 dans la remise du 27-02 au 13-03")
+    traceur_albiRemisePM10.setTitreGraph("Evolution de la concentration des PM10 dans la remise d'albi")
     traceur_albiRemisePM10.set_lieu("la remise")
     traceur_albiRemisePM10.set_liste_seuil(seuils)
     traceur_albiRemisePM10.set_liste_nom_seuil(nom_seuils)
