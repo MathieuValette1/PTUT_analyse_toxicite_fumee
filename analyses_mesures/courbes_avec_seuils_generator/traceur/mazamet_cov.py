@@ -3,6 +3,7 @@ from analyses_mesures.courbes_avec_seuils_generator.TraceurCourbeAvecSeuil impor
 mazametSaleCOV = "../mesures/mazamet_mesures/mazametSaleCOV.csv"
 mazametPropreCOV = "../mesures/mazamet_mesures/mazametPropreCOV.csv"
 mazametRemiseCOV = "../mesures/mazamet_mesures/mazametRemiseCOV.csv"
+op_mazamet = "../mesures/op_mazamet.xlsx"
 
 seuils = [250, 500, 1000, 3000]
 nom_seuils = ["Niveau 1", "Niveau 2", "Niveau 3", "Niveau 4", "Niveau 5"]
@@ -17,6 +18,7 @@ def traceur_COV_mazamet():
     traceur_mazametSaleCOV.setTitreGraph(
         "Evolution de la concentration des COV dans le vestiaire sale de mazamet")
     traceur_mazametSaleCOV.set_lieu("le vestiaire sale")
+    traceur_mazametSaleCOV.set_op_mazamet(op_mazamet)
     traceur_mazametSaleCOV.set_liste_seuil(seuils)
     traceur_mazametSaleCOV.set_liste_nom_seuil(nom_seuils)
     traceur_mazametSaleCOV.set_dir_path("mazamet/COVt/")
@@ -29,6 +31,7 @@ def traceur_COV_mazamet():
         "Evolution de la concentration des COV dans le vestiaire propre de mazamet")
     traceur_mazametPropreCOV.set_lieu("le vestiaire propre")
     traceur_mazametPropreCOV.set_liste_seuil(seuils)
+    traceur_mazametPropreCOV.set_op_mazamet(op_mazamet)
     traceur_mazametPropreCOV.set_liste_nom_seuil(nom_seuils)
     traceur_mazametPropreCOV.set_dir_path("mazamet/COVt/")
     traceur_mazametPropreCOV.set_fig_name("courbeMazametPropreCOV")
@@ -39,6 +42,7 @@ def traceur_COV_mazamet():
     traceur_mazametRemiseCOV.setTitreGraph("Evolution de la concentration des COV dans la remise de mazamet")
     traceur_mazametRemiseCOV.set_lieu("la remise")
     traceur_mazametRemiseCOV.set_liste_seuil(seuils)
+    traceur_mazametRemiseCOV.set_op_mazamet(op_mazamet)
     traceur_mazametRemiseCOV.set_liste_nom_seuil(nom_seuils)
     traceur_mazametRemiseCOV.set_dir_path("mazamet/COVt/")
     traceur_mazametRemiseCOV.set_fig_name("courbeMazametRemiseCOV")

@@ -4,6 +4,8 @@ albiSalePM1 = "../mesures/albi_mesures/albiSalePM1.csv"
 albiProprePM1 = "../mesures/albi_mesures/albiProprePM1.csv"
 albiRemisePM1 = "../mesures/albi_mesures/albiRemisePM1.csv"
 
+op_albi = "../mesures/op_albi.xlsx"
+
 seuils = []
 
 
@@ -18,6 +20,7 @@ def traceur_pm1_albi():
         "Evolution de la concentration des PM1 dans le vestiaire sale d'albi'")
     traceur_albiSalePM1.set_lieu("le vestiaire sale")
     traceur_albiSalePM1.set_liste_seuil(seuils)
+    traceur_albiSalePM1.set_op_albi(op_albi)
     traceur_albiSalePM1.set_liste_nom_seuil([])
     traceur_albiSalePM1.set_dir_path("albi/pm1/")
     traceur_albiSalePM1.set_fig_name("courbeAlbiSalePM1")
@@ -28,6 +31,7 @@ def traceur_pm1_albi():
     traceur_albiProprePM1.setTitreGraph(
         "Evolution de la concentration des PM1 dans le vestiaire propre d'albi'")
     traceur_albiProprePM1.set_lieu("le vestiaire sale")
+    traceur_albiProprePM1.set_op_albi(op_albi)
     traceur_albiProprePM1.set_liste_seuil(seuils)
     traceur_albiProprePM1.set_liste_nom_seuil([])
     traceur_albiProprePM1.set_dir_path("albi/pm1/")
@@ -39,6 +43,7 @@ def traceur_pm1_albi():
     traceur_albiRemisePM1.setTitreGraph("Evolution de la concentration des PM1 dans la remise d'albi'")
     traceur_albiRemisePM1.set_lieu("la remise")
     traceur_albiRemisePM1.set_liste_seuil(seuils)
+    traceur_albiRemisePM1.set_op_albi(op_albi)
     traceur_albiRemisePM1.set_liste_nom_seuil([])
     traceur_albiRemisePM1.set_dir_path("albi/pm1/")
     traceur_albiRemisePM1.set_fig_name("courbeAlbiRemisePM1")

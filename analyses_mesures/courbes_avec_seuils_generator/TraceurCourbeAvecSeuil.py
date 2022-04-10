@@ -3,6 +3,8 @@ import pandas as pd
 from pylab import *
 from datetime import datetime, timedelta
 
+from .Op_reader import Op_reader
+
 STORAGE_PATH = '../graphs/courbes_avec_seuils/'
 
 
@@ -25,6 +27,8 @@ class TraceurCourbeAvecSeuil:
         self.deuxieme_type_mesure = ""
         self.figname = ""
         self.dirpath = ""
+        self.op_mazamet = ""  # path pour les données opérationnelles de mazamet
+        self.op_albi = ""
 
     def add_dataframe(self, dataframe):
         self.listeDataFrame.append(dataframe)
@@ -78,6 +82,12 @@ class TraceurCourbeAvecSeuil:
     def set_liste_lieu(self, liste_lieu):
         self.liste_lieu = liste_lieu
 
+    def set_op_mazamet(self, excel_path):
+        self.op_mazamet = excel_path
+
+    def set_op_albi(self, excel_path):
+        self.op_albi = excel_path
+
     @staticmethod
     def _set_seuil_color():
         return ['green', 'yellow', 'orange', 'red', 'purple', 'pink', 'brown', 'blue', 'black']
@@ -88,7 +98,7 @@ class TraceurCourbeAvecSeuil:
 
     def csv_reader(self, csv_path):
 
-        df = pd.read_csv(csv_path, sep=";",  header=0,
+        df = pd.read_csv(csv_path, sep=";", header=0,
                          names=['Date', self.typeMesure])
         df.iloc[:, 1:] = df.iloc[:, 1:].replace(',', '.', regex=True).astype(float)
         df["Date"] = pd.to_datetime(df["Date"])
@@ -99,7 +109,6 @@ class TraceurCourbeAvecSeuil:
         })
 
         df = df.set_index('Date')
-
 
         return df
 
@@ -184,6 +193,14 @@ class TraceurCourbeAvecSeuil:
                     liste_label.append(self.typeMesure + " dans " + lieu)
                 return liste_label
 
+    def read_excel(self, excel_path):
+        self.df_operations = pd.read_excel(excel_path, usecols=[5, 9, 10], names=['nature', "date_fin", "heure_fin"])
+        self.df_operations['date_heure_fin'] = self.df_operations['date_fin'] + ' ' + self.df_operations['heure_fin']
+        self.df_operations = self.df_operations.drop('date_fin', axis=1).drop('heure_fin', axis=1)
+        self.df_operations["date_heure_fin"] = pd.to_datetime(self.df_operations["date_heure_fin"])
+
+        return self.df_operations
+
     def draw_graph(self):
 
         self.fill_listeDataFrame()
@@ -191,7 +208,9 @@ class TraceurCourbeAvecSeuil:
         if self.liste_deuxieme_dataframe_path:
             self.fill_liste_deuxieme_DataFrame()
 
-        sns.set(rc={'figure.figsize': (20, 10)})  # largeur hauteur
+        largeur = 20
+        hauteur = 10
+        sns.set(rc={'figure.figsize': (largeur, hauteur)})  # largeur hauteur
 
         # plt.figure()
 
@@ -204,6 +223,30 @@ class TraceurCourbeAvecSeuil:
 
         for i in range(len(self.liste_seuil)):
             ax.axhline(self.liste_seuil[i], label=self.liste_nom_seuil[i], color=self._set_seuil_color()[i])
+
+        if self.op_mazamet:
+            df = self.read_excel(self.op_mazamet)
+            dates = list(df['date_heure_fin'])
+            natures = list(df['nature'])
+            for i in range(len(dates)):
+                ax.axvline(dates[i], color='red')
+                text(dates[i], ax.get_ylim()[1] * 0.75, natures[i], rotation=90, horizontalalignment='right',
+                     verticalalignment='center',
+                     backgroundcolor='yellow',
+                     fontsize='smaller'
+                     )
+
+        if self.op_albi:
+            df = self.read_excel(self.op_albi)
+            dates = list(df['date_heure_fin'])
+            natures = list(df['nature'])
+            for i in range(len(dates)):
+                ax.axvline(dates[i], color='red')
+                text(dates[i], ax.get_ylim()[1]*0.75,  natures[i], rotation=90,horizontalalignment='right',
+                     verticalalignment='center',
+                     backgroundcolor='yellow',
+                    fontsize = 'smaller'
+                    )
 
         if self.liste_deuxieme_dataframe:
             ax2 = ax.twinx()
@@ -218,4 +261,3 @@ class TraceurCourbeAvecSeuil:
         storage_path = STORAGE_PATH + self.dirpath
         plt.savefig(storage_path + self.figname)
         plt.close()
-
