@@ -49,3 +49,13 @@ def traceur_pm10_mazamet():
     traceur_mazametRemisePM10.set_dir_path("mazamet/pm10/")
     traceur_mazametRemisePM10.set_fig_name("pm_10_remise_mazamet")
     traceur_mazametRemisePM10.draw_graph()
+
+    traceur_mazametVestiaresPM10 = TraceurCourbeAvecSeuil([mazametProprePM10, mazametSalePM10], "PM10")
+    traceur_mazametVestiaresPM10.set_op_mazamet(op_mazamet)
+    traceur_mazametVestiaresPM10.setTitreGraph("Evolution de la concentration des PM10 dans les vestiaires de mazamet")
+    traceur_mazametVestiaresPM10.set_liste_lieu(['le vestaire propre', 'le vestiaire sale'])
+    traceur_mazametVestiaresPM10.set_liste_seuil(seuils)
+    traceur_mazametVestiaresPM10.set_liste_nom_seuil(nom_seuils)
+    traceur_mazametVestiaresPM10.set_dir_path("mazamet/pm10/")
+    traceur_mazametVestiaresPM10.set_fig_name("courbeMazametVestiairesPM10")
+    traceur_mazametVestiaresPM10.draw_graph()

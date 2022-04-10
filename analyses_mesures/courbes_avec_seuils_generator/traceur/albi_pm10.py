@@ -31,7 +31,7 @@ def traceur_pm10_albi():
     traceur_albiProprePM10 = TraceurCourbeAvecSeuil([albiProprePM10], "PM10")
     traceur_albiProprePM10.set_op_albi(op_albi)
     traceur_albiProprePM10.setTitreGraph(
-        "Evolution de la concentration des PM10 dans le vestiaire propre d'albi'")
+        "Evolution de la concentration des PM10 dans le vestiaire propre d'albi")
     traceur_albiProprePM10.set_lieu("le vestiaire propre")
     traceur_albiProprePM10.set_liste_seuil(seuils)
     traceur_albiProprePM10.set_liste_nom_seuil(nom_seuils)
@@ -49,3 +49,13 @@ def traceur_pm10_albi():
     traceur_albiRemisePM10.set_dir_path("albi/pm10/")
     traceur_albiRemisePM10.set_fig_name("courbeAlbiRemisePM10")
     traceur_albiRemisePM10.draw_graph()
+
+    traceur_albiVestiaresPM10 = TraceurCourbeAvecSeuil([albiProprePM10, albiSalePM10], "PM10")
+    traceur_albiVestiaresPM10.set_op_albi(op_albi)
+    traceur_albiVestiaresPM10.setTitreGraph("Evolution de la concentration des PM10 dans les vestiaires d'albi")
+    traceur_albiVestiaresPM10.set_liste_lieu(['vestaire propre', 'vestiaire sale'])
+    traceur_albiVestiaresPM10.set_liste_seuil(seuils)
+    traceur_albiVestiaresPM10.set_liste_nom_seuil(nom_seuils)
+    traceur_albiVestiaresPM10.set_dir_path("albi/pm10/")
+    traceur_albiVestiaresPM10.set_fig_name("courbeAlbiVestiairesPM10")
+    traceur_albiVestiaresPM10.draw_graph()

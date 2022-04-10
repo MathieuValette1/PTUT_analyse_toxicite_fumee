@@ -13,25 +13,25 @@ from analyses_mesures.courbes_avec_seuils_generator.traceur.mazmet_co2 import tr
 
 if __name__ == '__main__':
 
-    print("Traçage des courbes...")
-    print("Pm10..")
+    # print("Traçage des courbes...")
+    # print("Pm10..")
     traceur_pm10_mazamet()
     traceur_pm10_albi()
-
-    print("PM2,5...")
-    traceur_pm2_5_mazamet()
-    traceur_pm2_5_albi()
-
-    print("PM1...")
-    traceur_pm1_mazamet()
-    traceur_pm1_albi()
-
-    print("COV...")
-    traceur_COV_mazamet()
-    traceur_COV_albi()
-
-    print("CO2...")
-    traceur_CO2_mazamet()
-    traceur_CO2_albi()
-
-    print('Toutes les courbes sont tracées')
+    #
+    # print("PM2,5...")
+    # traceur_pm2_5_mazamet()
+    # traceur_pm2_5_albi()
+    #
+    # print("PM1...")
+    # traceur_pm1_mazamet()
+    # traceur_pm1_albi()
+    #
+    # print("COV...")
+    # traceur_COV_mazamet()
+    # traceur_COV_albi()
+    #
+    # print("CO2...")
+    # traceur_CO2_mazamet()
+    # traceur_CO2_albi()
+    #
+    # print('Toutes les courbes sont tracées')
